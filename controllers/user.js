@@ -1,5 +1,5 @@
 let users = [
-    {id : 1, nama : "Afief Amarr", email : "amar@gmail.com"},
+    {id : 1, nama : "Afief Amar", email : "amar@gmail.com"},
     {id : 2, nama : "Candra Setiawan", email : "candra@gmail.com"},
 ]
 
