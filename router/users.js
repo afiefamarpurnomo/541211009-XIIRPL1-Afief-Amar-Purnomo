@@ -1,7 +1,7 @@
 const express = require('express')
 const routes = express.Router()
 
-const usercontrollers = require('../controllers/user')
+const usercontrollers = require('../controllers/users')
 
 routes.get('/users', usercontrollers.index)
 
