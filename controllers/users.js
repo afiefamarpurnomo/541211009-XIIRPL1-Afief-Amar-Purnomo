@@ -1,6 +1,7 @@
 const User = require('../models/User')
 
 module.exports = {
+       // get all users
     index: async (req, res) => {
       try {
           const users = await User.find()
@@ -22,6 +23,23 @@ module.exports = {
       }
         
       },
+      //get a user
+      show: async (req, res) => {
+        try {
+            const user = await User.findById(req.params.id)
+            res.json({
+              status: true,
+              data: user,
+              method: req.method,
+              url: req.url,
+              message: "Data berhasil didapat"
+            })
+
+        } catch (error) {
+          res.status(400).json({sucess: false})
+        }
+      },
+
     store: async (req, res) => {
       try {
         const user = await User.create(req.body)
@@ -53,8 +71,6 @@ module.exports = {
         } catch (error) {
           res.status(400).json({sucess: false})
         }
-        const id = req.params.id
-      
       },
       delete: async (req, res) => {
         try {
@@ -68,5 +84,6 @@ module.exports = {
         } catch (error) {
             res.status(400).json({sucess: false})
         }
-      }
+      },
+
 }
